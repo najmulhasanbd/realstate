@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real State</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+    <link rel="stylesheet" href="css/style.css?v=36">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <h2 class="m-0 fw-bold">Real<span class="text-primary">State</span></h2>
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler custom-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+                    <ul class="navbar-nav align-items-center gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a href="#" class="btn btn-square-solid px-4 py-2">Get Quote</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Offcanvas Mobile Menu -->
+        <div class="offcanvas offcanvas-end mobile-offcanvas" tabindex="-1" id="mobileMenu"
+            aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header pb-0 border-0">
+                <h3 class="offcanvas-title fw-bold" id="mobileMenuLabel">Real<span class="text-primary">State</span>
+                </h3>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between pt-5">
+                <ul class="navbar-nav mobile-nav-links gap-4 fs-4">
+                    <li class="nav-item mobile-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mobile-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item mobile-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item mobile-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="mobile-menu-footer mt-auto pt-4 border-top">
+                    <a class="btn btn-square-solid w-100 py-3 fw-bold fs-5 shadow-sm" href="#">Get Quote</a>
+                    <div class="social-icons d-flex justify-content-center gap-3 mt-4">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
+                            alt="Dream Home">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide-content container">
+                        <h1 class="slide-title text-white fw-bold display-1">Find Your<br><span
+                                class="text-primary">Dream Home</span></h1>
+                        <p class="slide-text text-light fs-4 mt-3">Discover the perfect living space designed just for
+                            you.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+                            alt="Luxury Apartments">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide-content container">
+                        <h1 class="slide-title text-white fw-bold display-1">Luxury<br><span
+                                class="text-primary">Apartments</span></h1>
+                        <p class="slide-text text-light fs-4 mt-3">Experience premium living with world-class amenities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09c15468?q=80&w=2070&auto=format&fit=crop"
+                            alt="Modern Architecture">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide-content container">
+                        <h1 class="slide-title text-white fw-bold display-1">Modern<br><span
+                                class="text-primary">Architecture</span></h1>
+                        <p class="slide-text text-light fs-4 mt-3">Building the future with sustainable and elegant
+                            designs.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-bg">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
+                            alt="Dream Home">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide-content container">
+                        <h1 class="slide-title text-white fw-bold display-1">Find Your<br><span
+                                class="text-primary">Dream Home</span></h1>
+                        <p class="slide-text text-light fs-4 mt-3">Discover the perfect living space designed just for
+                            you.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+                            alt="Luxury Apartments">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide-content container">
+                        <h1 class="slide-title text-white fw-bold display-1">Luxury<br><span
+                                class="text-primary">Apartments</span></h1>
+                        <p class="slide-text text-light fs-4 mt-3">Experience premium living with world-class amenities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09c15468?q=80&w=2070&auto=format&fit=crop"
+                            alt="Modern Architecture">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide-content container">
+                        <h1 class="slide-title text-white fw-bold display-1">Modern<br><span
+                                class="text-primary">Architecture</span></h1>
+                        <p class="slide-text text-light fs-4 mt-3">Building the future with sustainable and elegant
+                            designs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swiper Controls -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next text-white"><i class="fa-solid fa-arrow-right-long"></i></div>
+            <div class="swiper-button-prev text-white"><i class="fa-solid fa-arrow-left-long"></i></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding overflow-hidden position-relative"
+        style="background-color: var(--bg-light);">
+
+        <!-- Background Image -->
+        <div
+            style="position: absolute; top:0; left:0; width:100%; height:100%; background: url('img/landowner.svg') center right/contain no-repeat; opacity: 0.15; z-index: 0;">
+        </div>
+
+        <!-- Long Borders Grid -->
+        <div class="container h-100 position-absolute start-50 translate-middle-x"
+            style="z-index: 1; pointer-events: none; top:0;">
+            <div class="row h-100">
+                <div class="col-3 page-grid-line"></div>
+                <div class="col-3 page-grid-line"></div>
+                <div class="col-3 page-grid-line"></div>
+                <div class="col-3 page-grid-line border-end"></div>
+            </div>
+        </div>
+
+        <!-- Section Content -->
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center h-100">
+
+                <!-- Left Content -->
+                <div class="col-lg-6 mb-5 mb-lg-0 about-text-col">
+                    <h6 class="text-uppercase text-secondary fw-bold mb-3 letter-spacing-1">About Us</h6>
+                    <h2 class="display-5 fw-bold text-dark mb-4">REDEFINING YOUR STANDARD OF LIVING</h2>
+
+                    <p class="text-muted fs-6 mb-3 lh-lg">
+                        Edison Group was founded in 2009 with the aim to enhance aspects of life for people by providing
+                        powerful brands, reliable products and a wide range of services. It ventured into the real
+                        estate sector in 2015 with its "dream team" dedicated to merge value and innovation in the
+                        evolving real estate sector of Bangladesh. Through considerable focus on design, structural
+                        dimension, and feasibility in the sense of space and resource conservation; as well as
+                        environmental soundness; we deliver you optimum support in residential and commercial
+                        accommodation.
+                    </p>
+
+                    <p class="text-muted fs-6 mb-4 lh-lg">
+                        Conjoining the expertise of different fields to develop and bring in the quintessence of
+                        contemporary lifestyle, we provide distinguished services and strictly maintain project handover
+                        deadlines. We assure you to be your most reliable developer in Dhaka in terms of integrity and
+                        credibility.
+                    </p>
+
+                    <a href="#" class="btn btn-square-outline px-5 py-3 mt-4">Discover More</a>
+                </div>
+
+                <!-- Right Video/Image Content -->
+                <div class="col-lg-6 about-img-col">
+                    <div class="about-video-wrapper position-relative shadow-lg overflow-hidden rounded">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                            alt="Building Overview" class="img-fluid w-100 object-fit-cover" style="height: 400px;">
+
+                        <div class="overlay-dark bg-dark bg-opacity-25"></div>
+
+                        <!-- Video Play Button -->
+                        <a href="#" class="play-btn-wrapper" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <div class="play-btn">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0 justify-content-end">
+                    <button type="button" class="btn-close btn-close-white fs-4" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-lg">
+                        <iframe id="aboutVideo" src="https://www.youtube.com/embed/tgbNymZ7vqY?enablejsapi=1"
+                            title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Projects Section -->
+    <section id="projects" class="py-5 overflow-hidden position-relative">
+        <div class="container mb-4 d-flex justify-content-between align-items-end">
+            <div>
+                <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">Our Projects</h6>
+                <h2 class="fw-bold text-dark display-5 mb-0">Exclusive Developments</h2>
+            </div>
+
+            <!-- Custom Navigation Arrows -->
+            <div class="d-none d-md-flex gap-2">
+                <a href="javascript:void(0)"
+                    class="project-prev btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    style="width: 50px; height: 50px;">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="javascript:void(0)"
+                    class="project-next btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    style="width: 50px; height: 50px;">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Swiper Slider -->
+        <div class="swiper project-swiper w-100">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
+                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
+                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
+                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
+                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Screen Auto Play Video Section -->
+    <section id="showcase-video" class="position-relative w-100 overflow-hidden">
+        <video autoplay loop muted playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+            style="z-index: 0;">
+            <source src="https://videos.pexels.com/video-files/3255275/3255275-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Subtle dark overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25" style="z-index: 1;"></div>
+    </section>
+    <!-- Schedule Section -->
+    <section id="schedule" class="section-padding position-relative overflow-hidden" style="background-color: #f8f9fa;">
+        <!-- Subtle background pattern -->
+        <div
+            style="position: absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at 100% 50%, transparent 20%, rgba(0,166,81,0.03) 21%, rgba(0,166,81,0.03) 34%, transparent 35%, transparent), radial-gradient(circle at 0% 50%, transparent 20%, rgba(0,166,81,0.03) 21%, rgba(0,166,81,0.03) 34%, transparent 35%, transparent); background-size: 100px 100px; z-index: 0;">
+        </div>
+
+        <div class="container position-relative z-index-1">
+            <div class="card border-0 shadow-lg schedule-card overflow-hidden rounded-0">
+                <div class="row g-0">
+                    <!-- Left Image -->
+                    <div class="col-lg-6 d-none d-lg-block schedule-img-col">
+                        <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            class="w-100 h-100 object-fit-cover" alt="Schedule a meeting">
+                    </div>
+                    <!-- Right Form -->
+                    <div
+                        class="col-lg-6 p-4 p-md-5 schedule-form-col bg-white d-flex flex-column justify-content-center">
+                        <h3 class="fw-bold mb-4 text-dark">SCHEDULE A MEETING</h3>
+                        <form>
+                            <div class="mb-4">
+                                <input type="text" class="form-control schedule-input" placeholder="Full Name*"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="tel" class="form-control schedule-input" placeholder="Phone Number*"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" class="form-control schedule-input" placeholder="Email Address">
+                            </div>
+                            <div class="mb-4">
+                                <select class="form-select schedule-input">
+                                    <option selected disabled>Select A Time</option>
+                                    <option value="morning">Morning (9 AM - 12 PM)</option>
+                                    <option value="afternoon">Afternoon (1 PM - 4 PM)</option>
+                                    <option value="evening">Evening (5 PM - 8 PM)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-square-outline px-5 py-3 mt-2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- counter -->
+    <section id="stats-counter" class="position-relative overflow-hidden">
+        <div class="container py-5">
+            <div class="row text-center mt-4 mb-4">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="counter-box">
+                        <h3 class="counter odometer text-primary fw-bold display-3" data-target="38">0</h3>
+                        <p class="text-muted fw-bold mt-2 fs-5">Completed Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="counter-box">
+                        <h3 class="counter odometer text-primary fw-bold display-3" data-target="12">0</h3>
+                        <p class="text-muted fw-bold mt-2 fs-5">Ongoing Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="counter-box">
+                        <h3 class="counter odometer text-primary fw-bold display-3" data-target="7">0</h3>
+                        <p class="text-muted fw-bold mt-2 fs-5">Upcoming Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="counter-box">
+                        <h3 class="counter odometer text-primary fw-bold display-3" data-target="100">0</h3>
+                        <p class="text-muted fw-bold mt-2 fs-5">Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="position-relative overflow-hidden pt-5 pb-3">
+
+        <!-- CSS Curve (Wave) at the top -->
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- GSAP Animated Blobs Background -->
+        <div class="footer-blobs-bg">
+            <div class="gsap-blob blob-1"></div>
+            <div class="gsap-blob blob-2"></div>
+            <div class="gsap-blob blob-3"></div>
+        </div>
+
+        <div class="container position-relative z-index-1">
+            <div class="row gx-5 mb-5 footer-content-row">
+                <!-- Left: Company Info & Contact -->
+                <div class="col-lg-5 mb-4 mb-lg-0 footer-col">
+                    <h2 class="fw-bold mb-1 letter-spacing-1 text-dark">PROPERTY</h2>
+                    <h6 class="text-uppercase text-muted letter-spacing-2 mb-4" style="font-size: 0.75rem;">Development
+                        Ltd</h6>
+
+                    <p class="text-muted small mb-4 pe-lg-4 lh-lg">
+                        Building exceptional spaces that redefine modern living.<br>
+                        Excellence in every detail, innovation in every project.
+                    </p>
+
+                    <h6 class="text-uppercase text-secondary fw-bold mb-3 small letter-spacing-1">Get In Touch</h6>
+
+                    <div class="d-flex flex-wrap gap-4 mb-3">
+                        <h4 class="fw-bold text-dark mb-0">01704 155 555</h4>
+                        <h4 class="fw-bold text-dark mb-0">01704 152 106</h4>
+                    </div>
+
+                    <ul class="list-unstyled text-muted small contact-list">
+                        <li class="mb-2"><i class="fa-solid fa-envelope text-primary me-2"></i> mktg308@prangroup.com
+                        </li>
+                        <li><i class="fa-solid fa-location-dot text-primary me-2 pt-1 float-start"></i> <span
+                                class="d-block ms-4">105 Pragati Sarani, Middle Badda, Dhaka - 1212, Bangladesh</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Middle: Quick Links & Follow Us -->
+                <div class="col-lg-7 d-flex justify-content-between flex-wrap footer-col">
+
+                    <div class="mb-4 mb-md-0">
+                        <h6 class="text-uppercase text-primary fw-bold mb-4 small letter-spacing-1">Quick Links</h6>
+                        <ul class="list-unstyled footer-links small">
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Management Team</a>
+                            </li>
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Get Quote</a></li>
+                            <li><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4 mb-md-0">
+                        <h6 class="text-uppercase text-primary fw-bold mb-4 small letter-spacing-1">Projects</h6>
+                        <ul class="list-unstyled footer-links small">
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Completed</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Upcoming</a></li>
+                            <li><a href="#" class="text-muted text-decoration-none">Ongoing</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h6 class="text-uppercase text-primary fw-bold mb-4 small letter-spacing-1">Follow Us</h6>
+                        <div class="d-flex gap-2 footer-socials">
+                            <a href="#" class="d-flex align-items-center justify-content-center text-dark"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center text-dark"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center text-dark"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-top pt-3 text-center footer-bottom-row">
+                <p class="small text-muted mb-0">
+                    &copy; 2028 Property Development Limited. All rights reserved. | <a href="#"
+                        class="text-primary text-decoration-none">Privacy Policy and Terms & Condition</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8801704155555" target="_blank"
+        class="whatsapp-float d-flex align-items-center justify-content-center">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-to-top d-flex align-items-center justify-content-center" id="scrollToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

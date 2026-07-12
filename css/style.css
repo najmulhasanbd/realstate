@@ -1,0 +1,853 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #00A651;
+    --primary-hover: #008f45;
+    --heading-color: #2c3e50;
+    --text-color: #4a5568;
+    --bg-light: #ffffff;
+    --bg-offcanvas: #f8f9fa;
+    --border-color: rgba(0, 0, 0, 0.05);
+
+    --main-font: "Roboto Condensed", sans-serif;
+
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-primary: 0 6px 15px rgba(0, 166, 81, 0.3);
+    --transition-base: all 0.3s ease;
+    --transition-slow: all 0.3s ease-in-out;
+}
+
+#about {
+    background: url('../img/landowner.svg') center right/contain no-repeat;
+    position: relative;
+    background-color: var(--bg-light);
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85); /* Light overlay to ensure text readability */
+    z-index: 0;
+}
+
+body {
+    font-family: var(--main-font);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-offcanvas);
+}
+
+/* ==========================================
+   Utilities & Reusable Components
+   ========================================== */
+
+/* Layout & Spacing */
+.flex-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 50px 0;
+    }
+}
+
+/* Overlays & Backgrounds */
+.page-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-grid-line {
+    border-left: 1px solid #ddd;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.page-grid .border-end {
+    border-right: 1px solid #ddd !important;
+}
+
+.overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.glass-effect {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Typography */
+.section-title {
+    color: var(--heading-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-custom {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition-base);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Header Styles */
+.main-header {
+    background: var(--bg-light);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    transition: var(--transition-slow);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navbar-brand h2 {
+    color: var(--heading-color);
+    letter-spacing: -0.5px;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: var(--transition-base);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary) !important;
+}
+
+/* Desktop Menu Links */
+.navbar-nav .nav-link {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.5rem 1rem;
+    transition: var(--transition-base);
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition-base);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 80%;
+}
+
+/* Custom Toggler */
+.custom-toggler:focus {
+    box-shadow: none;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 62, 80, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Offcanvas Mobile Menu */
+.mobile-offcanvas {
+    background-color: var(--bg-offcanvas);
+    width: 85% !important;
+    max-width: 400px;
+}
+
+.offcanvas-title {
+    color: var(--heading-color);
+}
+
+.mobile-nav-links .nav-link {
+    color: var(--heading-color);
+    font-weight: 700;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-nav-links .nav-link:hover,
+.mobile-nav-links .nav-link.active {
+    color: var(--primary-color);
+    padding-left: 10px;
+}
+
+.mobile-nav-links .nav-link::after {
+    display: none;
+}
+
+/* Social Icons */
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-light);
+    color: var(--heading-color);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+    transform: translateY(-3px);
+}
+
+/* Hero Slider Styles */
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -82px;
+    /* Pull up behind header */
+}
+
+.heroSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.heroSwiper .swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.slide-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 6s ease-in-out;
+}
+
+/* Zoom animation for active slide */
+.swiper-slide-active .slide-bg img {
+    transform: scale(1.15);
+}
+
+.slide-bg .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay for text readability */
+    z-index: 2;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.slide-title {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.slide-text {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    transition: var(--transition-base);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Hide default Swiper icons completely */
+.swiper-button-next::after,
+.swiper-button-prev::after,
+.swiper-button-next::before,
+.swiper-button-prev::before {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+    display: none !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-image: none !important;
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+/* FontAwesome Icons styling */
+.swiper-button-next i,
+.swiper-button-prev i {
+    font-size: 1.2rem;
+    color: var(--bg-light);
+    transition: var(--transition-base);
+    margin: 0 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.swiper-button-next:hover i {
+    transform: translate(calc(-50% + 4px), -50%);
+}
+
+.swiper-button-prev:hover i {
+    transform: translate(calc(-50% - 4px), -50%);
+}
+
+/* Hide arrows by default, show on slider hover */
+.swiper-button-next,
+.swiper-button-prev {
+    opacity: 0 !important;
+    transition: all 0.4s ease-in-out !important;
+}
+
+.swiper-button-next {
+    right: -20px !important;
+}
+
+.swiper-button-prev {
+    left: -20px !important;
+}
+
+.hero-slider:hover .swiper-button-next {
+    opacity: 1 !important;
+    right: 20px !important;
+}
+
+.hero-slider:hover .swiper-button-prev {
+    opacity: 1 !important;
+    left: 20px !important;
+}
+
+/* Pagination Dots */
+.swiper-pagination {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 30px !important;
+}
+
+.swiper-pagination-bullet {
+    background: #fff !important;
+    opacity: 0.5;
+    width: 6px;
+    height: 6px;
+    margin: 0 8px !important;
+    transition: var(--transition-base);
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fff !important;
+    width: 6px;
+    height: 6px;
+    outline: 1px solid #fff;
+    outline-offset: 4px;
+    margin: 0 12px !important;
+}
+
+/* ==========================================
+   About Section Styles
+   ========================================== */
+
+.play-btn-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: inline-block;
+}
+
+.play-btn {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    padding-left: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 166, 81, 0.4);
+    animation: pulse-primary 2s infinite;
+}
+
+.play-btn-wrapper:hover .play-btn {
+    transform: scale(1.1);
+    background-color: var(--primary-hover);
+}
+
+@keyframes pulse-primary {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 166, 81, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(0, 166, 81, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 166, 81, 0);
+    }
+}
+
+.letter-spacing-1 {
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   Footer Section Styles
+   ========================================== */
+
+#footer {
+    background-color: var(--bg-light);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Footer Wave (Curve) */
+.footer-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: translateY(-99%); /* Pull it up out of the footer so it looks like the top edge is curved */
+}
+
+.footer-wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.footer-wave .shape-fill {
+    fill: var(--bg-light);
+}
+
+/* GSAP Blobs Background */
+.footer-blobs-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.gsap-blob {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.15; /* subtle colors so text remains readable */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: #00A651; /* Primary green */
+    top: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 350px;
+    height: 350px;
+    background: #007bff; /* Blue */
+    bottom: -50px;
+    right: -100px;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: #ffc107; /* Yellow */
+    top: 40%;
+    left: 40%;
+}
+
+.footer-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.footer-links a {
+    transition: var(--transition-base);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color) !important;
+    padding-left: 5px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: var(--transition-base);
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    background-color: var(--primary-color);
+    color: #fff !important;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.contact-list i {
+    width: 20px;
+    text-align: center;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 4px;
+}
+
+/* ==========================================
+   WhatsApp Floating Button
+   ========================================== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 100;
+    text-decoration: none;
+    transition: var(--transition-base);
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe5d;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ==========================================
+   Projects Section
+   ========================================== */
+.custom-project-tabs .nav-link {
+    color: var(--heading-color);
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-base);
+}
+
+.custom-project-tabs .nav-link:hover {
+    background-color: rgba(0, 166, 81, 0.1);
+    color: var(--primary-color);
+}
+
+.custom-project-tabs .nav-link.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary);
+}
+
+.project-swiper-ongoing,
+.project-swiper-upcoming,
+.project-swiper-handed-over,
+.project-swiper-ready {
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+.project-slide {
+    height: 500px !important;
+    display: block !important;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .project-slide {
+        height: 750px !important;
+    }
+}
+
+.project-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.project-slide:hover img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+    z-index: 1;
+}
+
+.project-content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 2;
+}
+
+/* ==========================================
+   Showcase Video Section
+   ========================================== */
+#showcase-video {
+    height: 40vh; /* Smaller height on mobile */
+}
+
+@media (min-width: 992px) {
+    #showcase-video {
+        height: 100vh; /* Full screen height on desktop */
+    }
+}
+
+/* ==========================================
+   Schedule Section
+   ========================================== */
+.schedule-card {
+    border-radius: 0;
+}
+.schedule-input {
+    border: 1px solid #777;
+    border-radius: 0;
+    padding: 15px;
+    box-shadow: none !important;
+    font-size: 14px;
+    background: transparent;
+}
+.schedule-input:focus {
+    border-color: var(--primary-color);
+}
+
+/* ==========================================
+   Reusable Components
+   ========================================== */
+
+/* Reusable Square Outline Button */
+.btn-square-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-square-outline:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Reusable Square Solid Button */
+.btn-square-solid {
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    color: #fff;
+    border-radius: 0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-square-solid:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+/* Reusable Square Light Outline Button */
+.btn-square-outline-light {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-square-outline-light:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ==========================================
+   Scroll to Top Button
+   ========================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 100px; /* Above whatsapp button */
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: #007539;
+    color: #fff;
+    transform: translateY(-5px);
+}
