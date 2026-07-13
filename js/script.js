@@ -19,6 +19,7 @@ $(document).ready(function () {
     initCounters();
     initNewSections();
     initContactPage();
+    initAboutPage();
 
     // ------------------------------------------
     // 0. Grid Animations
@@ -671,6 +672,77 @@ $(document).ready(function () {
                     }, 1500);
                 });
             }
+        }
+    }
+
+    // ------------------------------------------
+    // 11. About Page Animations
+    // ------------------------------------------
+    function initAboutPage() {
+        const aboutHero = document.querySelector('.about-hero');
+        if (aboutHero) {
+            // Hero Animations
+            gsap.from(".about-title", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.2,
+                ease: "power3.out"
+            });
+            gsap.from(".about-subtitle", {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                delay: 0.4,
+                ease: "power3.out"
+            });
+
+            // Story Section Animations
+            gsap.from(".about-story-content", {
+                scrollTrigger: {
+                    trigger: ".about-story-content",
+                    start: "top 80%",
+                },
+                x: -50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+            gsap.from(".about-story-img", {
+                scrollTrigger: {
+                    trigger: ".about-story-img",
+                    start: "top 80%",
+                },
+                x: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+
+
+            // Team Section Animations
+            gsap.from(".about-team-header", {
+                scrollTrigger: {
+                    trigger: ".about-team-header",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+            gsap.from(".team-card", {
+                scrollTrigger: {
+                    trigger: ".team-card",
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "back.out(1.2)"
+            });
         }
     }
 

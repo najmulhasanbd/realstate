@@ -47,7 +47,7 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link active" href="about.html">About Us</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -60,7 +60,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="contact.html">Contact Us</a>
+                            <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
                         <li class="nav-item ms-2">
                             <a href="#schedule" class="btn btn-square-solid px-4 py-2">Get Quote</a>
@@ -85,7 +85,7 @@
                         <a class="nav-link text-white" href="index.html">Home</a>
                     </li>
                     <li class="nav-item mobile-item">
-                        <a class="nav-link text-white" href="about.html">About Us</a>
+                        <a class="nav-link active text-white" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item mobile-item dropdown">
                         <a class="nav-link text-white dropdown-toggle" href="#" id="mobileProjectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -98,7 +98,7 @@
                         </ul>
                     </li>
                     <li class="nav-item mobile-item">
-                        <a class="nav-link active text-white" href="contact.html">Contact Us</a>
+                        <a class="nav-link text-white" href="contact.html">Contact Us</a>
                     </li>
                 </ul>
                 <div class="mobile-menu-footer mt-auto pt-4 border-top border-secondary">
@@ -113,96 +113,146 @@
         </div>
     </header>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero position-relative d-flex align-items-center justify-content-center" style="height: 40vh; min-height: 300px; background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;">
+    <!-- About Hero Section -->
+    <section class="about-hero position-relative d-flex align-items-center justify-content-center" style="height: 40vh; min-height: 300px; background: url('https://images.unsplash.com/photo-1542361345-89e58247f2d5?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;">
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
         <div class="container position-relative z-index-1 text-center mt-5">
-            <h1 class="display-3 fw-bold text-white contact-title">Get In <span class="text-primary">Touch</span></h1>
-            <p class="text-light fs-5 mt-3 contact-subtitle">We would love to hear from you. Let's start a conversation.</p>
+            <h1 class="display-3 fw-bold text-white about-title">About <span class="text-primary">Edison</span></h1>
+            <p class="text-light fs-5 mt-3 about-subtitle">Building dreams, delivering excellence.</p>
         </div>
     </section>
 
-    <!-- Contact Details Section -->
+    <!-- Company Story Section -->
     <section class="section-padding position-relative" style="background-color: var(--bg-light);">
         <div class="container">
-            <div class="row g-4 g-lg-5">
-                <!-- Left: Contact Form -->
-                <div class="col-12 col-lg-7 contact-form-col">
-                    <div class="bg-white p-4 p-md-5 rounded shadow-lg border-top border-primary border-4">
-                        <h3 class="fw-bold text-dark mb-4">Send Us A Message</h3>
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label text-secondary fw-bold small">Full Name</label>
-                                    <input type="text" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="John Doe" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-secondary fw-bold small">Email Address</label>
-                                    <input type="email" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="john@example.com" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-secondary fw-bold small">Phone Number</label>
-                                    <input type="tel" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="+880 1XXX XXXXXX">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-secondary fw-bold small">Subject</label>
-                                    <input type="text" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="Property Inquiry" required>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label text-secondary fw-bold small">Your Message</label>
-                                    <textarea class="form-control form-control-lg bg-light border-0 shadow-none contact-input" rows="5" placeholder="Write your message here..." required></textarea>
-                                </div>
-                                <div class="col-12 mt-4">
-                                    <button type="submit" class="btn btn-primary w-100 py-3 fs-5 fw-bold letter-spacing-1 text-uppercase">Send Message <i class="fa-solid fa-paper-plane ms-2"></i></button>
-                                </div>
-                            </div>
-                        </form>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 about-story-content">
+                    <h6 class="text-uppercase text-secondary fw-bold mb-3 letter-spacing-1">Our Journey</h6>
+                    <h2 class="display-5 fw-bold text-dark mb-4">A Legacy of Quality and Trust</h2>
+                    <p class="text-muted fs-6 mb-3 lh-lg">
+                        Edison Group was founded in 2009 with the aim to enhance aspects of life for people by providing
+                        powerful brands, reliable products and a wide range of services. It ventured into the real
+                        estate sector in 2015 with its "dream team" dedicated to merge value and innovation in the
+                        evolving real estate sector of Bangladesh.
+                    </p>
+                    <p class="text-muted fs-6 mb-4 lh-lg">
+                        Conjoining the expertise of different fields to develop and bring in the quintessence of
+                        contemporary lifestyle, we provide distinguished services and strictly maintain project handover
+                        deadlines. We assure you to be your most reliable developer in Dhaka in terms of integrity and
+                        credibility.
+                    </p>
+                </div>
+                <div class="col-lg-6 about-story-img">
+                    <div class="position-relative shadow-lg rounded overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 400px;" alt="Edison Group Building">
+                        <div class="overlay-dark bg-dark bg-opacity-25"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Right: Contact Info & Map -->
-                <div class="col-12 col-lg-5 contact-info-col mt-4 mt-lg-0">
-                    <div class="d-flex flex-column h-100">
-                        <!-- Info Cards -->
-                        <div class="row g-3 mb-4">
-                            <div class="col-12 contact-info-card">
-                                <div class="bg-white p-4 rounded shadow-sm d-flex align-items-center border-start border-primary border-4">
-                                    <div class="bg-light text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                        <i class="fa-solid fa-location-dot fs-4"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-1">Our Office</h6>
-                                        <p class="text-muted mb-0 small">Gulshan 1, Dhaka, Bangladesh</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 contact-info-card">
-                                <div class="bg-white p-4 rounded shadow-sm d-flex align-items-center border-start border-primary border-4">
-                                    <div class="bg-light text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                        <i class="fa-solid fa-phone fs-4"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-1">Call Us</h6>
-                                        <p class="text-muted mb-0 small">+880 1704 155555</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 contact-info-card">
-                                <div class="bg-white p-4 rounded shadow-sm d-flex align-items-center border-start border-primary border-4">
-                                    <div class="bg-light text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                        <i class="fa-solid fa-envelope fs-4"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-1">Email Us</h6>
-                                        <p class="text-muted mb-0 small">info@realstate.com</p>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- Vision & Mission Section -->
+    <section class="section-padding bg-white position-relative">
+        <div class="container">
+            <div class="text-center mb-5 about-vm-header">
+                <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">Core Values</h6>
+                <h2 class="display-4 fw-bold text-dark">Our Vision & Mission</h2>
+            </div>
+            <div class="row g-4 g-lg-5 justify-content-center mt-3">
+                <div class="col-12 col-lg-5">
+                    <div class="vm-card bg-white p-5 rounded shadow text-center h-100 border-bottom border-primary border-4 position-relative" style="z-index: 2;">
+                        <div class="vm-icon bg-light text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm" style="width: 90px; height: 90px;">
+                            <i class="fa-solid fa-lightbulb fs-1"></i>
                         </div>
+                        <h3 class="fw-bold mb-3">Our Vision</h3>
+                        <p class="text-muted lh-lg mb-0">To be the most trusted and innovative real estate developer in Bangladesh, setting new standards for quality living and sustainable urban development.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="vm-card bg-white p-5 rounded shadow text-center h-100 border-bottom border-primary border-4 position-relative" style="z-index: 2;">
+                        <div class="vm-icon bg-light text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm" style="width: 90px; height: 90px;">
+                            <i class="fa-solid fa-bullseye fs-1"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Our Mission</h3>
+                        <p class="text-muted lh-lg mb-0">To deliver meticulously designed properties that blend aesthetics with functionality, ensuring absolute customer satisfaction and timely project handovers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <!-- Map -->
-                        <div class="flex-grow-1 bg-white rounded shadow-sm overflow-hidden contact-map-card">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14602.700312015093!2d90.40310329999999!3d23.785686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a0f70deb73%3A0x30c36498f90fe23!2sGulshan%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0; min-height: 250px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Team Section -->
+    <section class="section-padding position-relative" style="background-color: var(--bg-light);">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="text-center mb-5 about-team-header">
+                <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">The Minds Behind</h6>
+                <h2 class="display-4 fw-bold text-dark">Our Leadership Team</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Team Member 1 -->
+                <div class="col-12 col-sm-6 col-lg-3 team-card">
+                    <div class="bg-white rounded shadow-sm overflow-hidden text-center pb-4">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 550px;" alt="CEO">
+                        <h5 class="fw-bold text-dark mt-4 mb-1">Aminul Islam</h5>
+                        <p class="text-primary small fw-bold text-uppercase letter-spacing-1 mb-3">Chairman & CEO</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="text-muted bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="col-12 col-sm-6 col-lg-3 team-card">
+                    <div class="bg-white rounded shadow-sm overflow-hidden text-center pb-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 550px;" alt="Managing Director">
+                        <h5 class="fw-bold text-dark mt-4 mb-1">Rubana Haque</h5>
+                        <p class="text-primary small fw-bold text-uppercase letter-spacing-1 mb-3">Managing Director</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="text-muted bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="col-12 col-sm-6 col-lg-3 team-card">
+                    <div class="bg-white rounded shadow-sm overflow-hidden text-center pb-4">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 550px;" alt="Director">
+                        <h5 class="fw-bold text-dark mt-4 mb-1">Syed Rahman</h5>
+                        <p class="text-primary small fw-bold text-uppercase letter-spacing-1 mb-3">Director of Operations</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="text-muted bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="col-12 col-sm-6 col-lg-3 team-card">
+                    <div class="bg-white rounded shadow-sm overflow-hidden text-center pb-4">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 550px;" alt="Head of Sales">
+                        <h5 class="fw-bold text-dark mt-4 mb-1">Kazi Tariq</h5>
+                        <p class="text-primary small fw-bold text-uppercase letter-spacing-1 mb-3">Head of Sales</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="text-muted bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="col-12 col-sm-6 col-lg-3 team-card">
+                    <div class="bg-white rounded shadow-sm overflow-hidden text-center pb-4">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 550px;" alt="Chief Architect">
+                        <h5 class="fw-bold text-dark mt-4 mb-1">Farhana Islam</h5>
+                        <p class="text-primary small fw-bold text-uppercase letter-spacing-1 mb-3">Chief Architect</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="text-muted bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 6 -->
+                <div class="col-12 col-sm-6 col-lg-3 team-card">
+                    <div class="bg-white rounded shadow-sm overflow-hidden text-center pb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 350px;" alt="Marketing Head">
+                        <h5 class="fw-bold text-dark mt-4 mb-1">Shafiqul Alam</h5>
+                        <p class="text-primary small fw-bold text-uppercase letter-spacing-1 mb-3">Head of Marketing</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="text-muted bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;"><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>

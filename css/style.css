@@ -1029,3 +1029,54 @@ body {
 .contact-map-card:hover iframe {
     filter: brightness(0.9);
 }
+
+/* ==========================================
+   About Page Styles
+   ========================================== */
+
+.about-hero {
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.about-story-img img {
+    transition: transform 0.5s ease;
+}
+
+.about-story-img:hover img {
+    transform: scale(1.05);
+}
+
+.vm-card {
+    transition: all 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.vm-card:hover .vm-icon {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.team-card > div {
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.team-card:hover > div {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.team-card img {
+    transition: filter 0.3s ease;
+    filter: grayscale(80%);
+}
+
+.team-card:hover img {
+    filter: grayscale(0%);
+}
