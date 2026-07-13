@@ -886,3 +886,14 @@ $(document).ready(function () {
     }
 
 
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Add a slight delay for better visual effect, or immediately hide
+        setTimeout(() => {
+            preloader.classList.add('preloader-hidden');
+            // Remove from DOM after transition
+            setTimeout(() => preloader.remove(), 600);
+        }, 500);
+    }
+});
