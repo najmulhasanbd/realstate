@@ -1207,39 +1207,4 @@ body {
 }
 
 
-/* ==========================================
-   Custom Cursor
-   ========================================== */
-body, a, button, .btn, input, textarea, .swiper-button-next, .swiper-button-prev, .nav-link, .dropdown-item {
-    cursor: none !important;
-}
 
-.custom-cursor-dot,
-.custom-cursor-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    z-index: 9999999;
-    pointer-events: none;
-}
-
-.custom-cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--primary-color);
-}
-
-.custom-cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(0, 166, 81, 0.5);
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
-
-body.custom-cursor-hover .custom-cursor-outline {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0, 166, 81, 0.1);
-    border-color: rgba(0, 166, 81, 0.8);
-}
