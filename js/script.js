@@ -897,3 +897,38 @@ window.addEventListener('load', function() {
         }, 500);
     }
 });
+
+      // ------------------------------------------
+      // 10. Custom Cursor
+      // ------------------------------------------
+      function initCustomCursor() {
+          if (window.matchMedia("(pointer: fine)").matches) {
+              const dot = document.querySelector('.custom-cursor-dot');
+              const outline = document.querySelector('.custom-cursor-outline');
+              
+              if (!dot || !outline) return;
+              
+              gsap.set(dot, { xPercent: -50, yPercent: -50 });
+              gsap.set(outline, { xPercent: -50, yPercent: -50 });
+              
+              window.addEventListener('mousemove', (e) => {
+                  const posX = e.clientX;
+                  const posY = e.clientY;
+                  
+                  gsap.set(dot, { x: posX, y: posY });
+                  gsap.to(outline, { x: posX, y: posY, duration: 0.15, ease: "power2.out" });
+              });
+
+              // Add hover effect for clickable elements
+              const hoverElements = document.querySelectorAll('a, button, .btn, input, textarea, .swiper-button-next, .swiper-button-prev');
+              hoverElements.forEach(el => {
+                  el.addEventListener('mouseenter', () => {
+                      document.body.classList.add('custom-cursor-hover');
+                  });
+                  el.addEventListener('mouseleave', () => {
+                      document.body.classList.remove('custom-cursor-hover');
+                  });
+              });
+          }
+      }
+      initCustomCursor();
