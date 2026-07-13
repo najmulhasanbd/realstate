@@ -1,4 +1,4 @@
-// ==========================================
+﻿// ==========================================
 // Main Application Scripts
 // ==========================================
 
@@ -18,8 +18,11 @@ $(document).ready(function () {
     initFooterAnimations();
     initCounters();
     initNewSections();
+    // Initialize specific pages
     initContactPage();
     initAboutPage();
+    initProjectPages();
+    initProjectDetailsPage();
 
     // ------------------------------------------
     // 0. Grid Animations
@@ -747,3 +750,139 @@ $(document).ready(function () {
     }
 
 });
+
+    // Project Pages Animations
+    function initProjectPages() {
+        if ($(".project-hero").length) {
+            gsap.from(".project-hero", {
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+            gsap.from(".project-title", {
+                y: -50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: "back.out(1.5)"
+            });
+            gsap.from(".project-subtitle", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.5,
+                ease: "power2.out"
+            });
+            gsap.from(".project-card-wrapper", {
+                scrollTrigger: {
+                    trigger: ".project-grid",
+                    start: "top 80%",
+                },
+                y: 100,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "back.out(1.2)"
+            });
+        }
+    }
+
+    // Project Details Page Animations
+    function initProjectDetailsPage() {
+        if ($(".details-hero").length) {
+            gsap.from(".details-hero", {
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+            gsap.from(".details-title", {
+                y: -50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: "back.out(1.5)"
+            });
+            gsap.from(".details-subtitle", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.5,
+                ease: "power2.out"
+            });
+            
+            // Overview Content
+            gsap.from(".details-overview-content", {
+                scrollTrigger: {
+                    trigger: ".details-overview-content",
+                    start: "top 80%"
+                },
+                x: -50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+            
+            // Amenities
+            gsap.from(".details-amenities", {
+                scrollTrigger: {
+                    trigger: ".details-amenities",
+                    start: "top 80%"
+                },
+                x: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+            
+            // Gallery
+            gsap.from(".details-gallery-header", {
+                scrollTrigger: {
+                    trigger: ".details-gallery-header",
+                    start: "top 80%"
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+            
+            gsap.from(".gallery-item", {
+                scrollTrigger: {
+                    trigger: ".details-gallery",
+                    start: "top 75%"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "back.out(1.2)"
+            });
+            
+            // Video Section
+            gsap.from(".details-video-header", {
+                scrollTrigger: {
+                    trigger: ".details-video-header",
+                    start: "top 80%"
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+            
+            gsap.from(".video-wrapper", {
+                scrollTrigger: {
+                    trigger: ".details-video",
+                    start: "top 75%"
+                },
+                scale: 0.9,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        
+
+}
+    }
+
+

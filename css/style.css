@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --primary-color: #00A651;
@@ -132,14 +132,7 @@ body {
 }
 
 /* Header Styles */
-.main-header {
-    background: var(--bg-light);
-    box-shadow: var(--shadow-md);
-    position: sticky;
-    top: 0;
-    z-index: 1030;
-    transition: var(--transition-slow);
-}
+.main-header { background: var(--bg-light); box-shadow: var(--shadow-md); position: fixed; top: 0; left: 0; width: 100%; z-index: 1030; transition: var(--transition-slow); }
 
 .navbar {
     padding: 1rem 0;
@@ -786,20 +779,8 @@ body {
 }
 
 /* Reusable Square Solid Button */
-.btn-square-solid {
-    background: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    color: #fff;
-    border-radius: 0;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.btn-square-solid:hover {
-    background: transparent;
-    color: var(--primary-color);
-}
+.btn-square-solid { background: var(--primary-color); border: 2px solid var(--primary-color); color: #fff; border-radius: 0; font-weight: bold; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+.btn-square-solid:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: #fff; }
 
 /* Reusable Square Light Outline Button */
 .btn-square-outline-light {
@@ -1079,4 +1060,100 @@ body {
 
 .team-card:hover img {
     filter: grayscale(0%);
+}/* Project Pages CSS */
+.project-card {
+    transition: all 0.4s ease;
 }
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.project-img-wrapper img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img-wrapper img {
+    transform: scale(1.1);
+}
+/* Project Details Page CSS */
+.gallery-img {
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.video-wrapper:hover .play-btn {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.video-wrapper:hover .video-overlay {
+    opacity: 0.3 !important;
+    transition: opacity 0.3s ease;
+}
+
+.details-amenities li i {
+    transition: transform 0.3s ease;
+}
+
+.details-amenities li:hover i {
+    transform: translateX(5px);
+}
+/* Timeline CSS */
+.timeline {
+    border-left: 3px solid #e9ecef;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    margin-left: -11.5px;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    }
+}
+
+/* Location List */
+.location-list li {
+    transition: transform 0.3s ease;
+}
+
+.location-list li:hover {
+    transform: translateX(10px);
+}
+/* Responsive Fixes */
+.details-hero {
+    background-attachment: scroll !important; /* Fix for iOS Parallax issue */
+}
+
+@media (min-width: 768px) {
+    .w-md-auto {
+        width: auto !important;
+    }
+}
+/* Prevent horizontal scrolling globally */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Fix for fixed header */
+body {
+    padding-top: 76px; /* Approx height of the navbar */
+}
+
+
