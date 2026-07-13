@@ -902,7 +902,7 @@ window.addEventListener('load', function() {
       // 10. Custom Cursor
       // ------------------------------------------
       function initCustomCursor() {
-          if (window.matchMedia("(pointer: fine)").matches) {
+          if (true) {
               const dot = document.querySelector('.custom-cursor-dot');
               const outline = document.querySelector('.custom-cursor-outline');
               
@@ -932,3 +932,4 @@ window.addEventListener('load', function() {
           }
       }
       initCustomCursor();
+

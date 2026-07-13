@@ -226,7 +226,7 @@ body {
 }
 
 .mobile-nav-links .nav-link::after {
-    display: none;
+    
 }
 
 /* Social Icons */
@@ -1206,18 +1206,12 @@ body {
     visibility: hidden;
 }
 
+
 /* ==========================================
    Custom Cursor
    ========================================== */
-@media (pointer: fine) {
-    body, a, button, .btn, input, textarea, .swiper-button-next, .swiper-button-prev, .nav-link, .dropdown-item {
-        cursor: none !important;
-    }
-    
-    .custom-cursor-dot,
-    .custom-cursor-outline {
-        display: block;
-    }
+body, a, button, .btn, input, textarea, .swiper-button-next, .swiper-button-prev, .nav-link, .dropdown-item {
+    cursor: none !important;
 }
 
 .custom-cursor-dot,
@@ -1228,7 +1222,6 @@ body {
     border-radius: 50%;
     z-index: 9999999;
     pointer-events: none;
-    display: none;
 }
 
 .custom-cursor-dot {
