@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real State</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+    <link rel="stylesheet" href="css/style.css?v=36">
+</head>
+
+<body>
+
+    <!-- Global Full-page Grid -->
+    <div class="container position-fixed start-50 translate-middle-x"
+        style="z-index: 9999; pointer-events: none; top:0; height: 100vh; opacity: 0.4;">
+        <div class="row h-100">
+            <div class="col-3 page-grid-line"></div>
+            <div class="col-3 page-grid-line"></div>
+            <div class="col-3 page-grid-line"></div>
+            <div class="col-3 page-grid-line border-end"></div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <h2 class="m-0 fw-bold">Real<span class="text-primary">State</span></h2>
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler custom-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+                    <ul class="navbar-nav align-items-center gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Projects
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm mt-2" aria-labelledby="projectsDropdown">
+                                <li><a class="dropdown-item" href="#projects">Ongoing</a></li>
+                                <li><a class="dropdown-item" href="#upcoming-projects">Upcoming</a></li>
+                                <li><a class="dropdown-item" href="#completed-projects">Completed</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a href="#schedule" class="btn btn-square-solid px-4 py-2">Get Quote</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Offcanvas Mobile Menu -->
+        <div class="offcanvas offcanvas-end mobile-offcanvas bg-dark" tabindex="-1" id="mobileMenu"
+            aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header pb-0 border-0">
+                <h3 class="offcanvas-title fw-bold text-white" id="mobileMenuLabel">Real<span class="text-primary">State</span>
+                </h3>
+                <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between pt-5">
+                <ul class="navbar-nav mobile-nav-links gap-4 fs-4">
+                    <li class="nav-item mobile-item">
+                        <a class="nav-link text-white" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mobile-item">
+                        <a class="nav-link text-white" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item mobile-item dropdown">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="mobileProjectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark border-0 shadow-none bg-transparent ps-3" aria-labelledby="mobileProjectsDropdown">
+                            <li><a class="dropdown-item text-white-50" href="#projects">Ongoing</a></li>
+                            <li><a class="dropdown-item text-white-50" href="#upcoming-projects">Upcoming</a></li>
+                            <li><a class="dropdown-item text-white-50" href="#completed-projects">Completed</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-item">
+                        <a class="nav-link active text-white" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="mobile-menu-footer mt-auto pt-4 border-top border-secondary">
+                    <a class="btn btn-square-solid w-100 py-3 fw-bold fs-5 shadow-sm" href="#schedule">Get Quote</a>
+                    <div class="social-icons d-flex justify-content-center gap-3 mt-4">
+                        <a href="#" class="text-white bg-secondary border-0"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-white bg-secondary border-0"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white bg-secondary border-0"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero position-relative d-flex align-items-center justify-content-center" style="height: 40vh; min-height: 300px; background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+        <div class="container position-relative z-index-1 text-center mt-5">
+            <h1 class="display-3 fw-bold text-white contact-title">Get In <span class="text-primary">Touch</span></h1>
+            <p class="text-light fs-5 mt-3 contact-subtitle">We would love to hear from you. Let's start a conversation.</p>
+        </div>
+    </section>
+
+    <!-- Contact Details Section -->
+    <section class="section-padding position-relative" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+                <!-- Left: Contact Form -->
+                <div class="col-12 col-lg-7 contact-form-col">
+                    <div class="bg-white p-4 p-md-5 rounded shadow-lg border-top border-primary border-4">
+                        <h3 class="fw-bold text-dark mb-4">Send Us A Message</h3>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary fw-bold small">Full Name</label>
+                                    <input type="text" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="John Doe" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary fw-bold small">Email Address</label>
+                                    <input type="email" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="john@example.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary fw-bold small">Phone Number</label>
+                                    <input type="tel" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="+880 1XXX XXXXXX">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-secondary fw-bold small">Subject</label>
+                                    <input type="text" class="form-control form-control-lg bg-light border-0 shadow-none contact-input" placeholder="Property Inquiry" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-secondary fw-bold small">Your Message</label>
+                                    <textarea class="form-control form-control-lg bg-light border-0 shadow-none contact-input" rows="5" placeholder="Write your message here..." required></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary w-100 py-3 fs-5 fw-bold letter-spacing-1 text-uppercase">Send Message <i class="fa-solid fa-paper-plane ms-2"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Info & Map -->
+                <div class="col-12 col-lg-5 contact-info-col mt-4 mt-lg-0">
+                    <div class="d-flex flex-column h-100">
+                        <!-- Info Cards -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12 contact-info-card">
+                                <div class="bg-white p-4 rounded shadow-sm d-flex align-items-center border-start border-primary border-4">
+                                    <div class="bg-light text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                        <i class="fa-solid fa-location-dot fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Our Office</h6>
+                                        <p class="text-muted mb-0 small">Gulshan 1, Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 contact-info-card">
+                                <div class="bg-white p-4 rounded shadow-sm d-flex align-items-center border-start border-primary border-4">
+                                    <div class="bg-light text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                        <i class="fa-solid fa-phone fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Call Us</h6>
+                                        <p class="text-muted mb-0 small">+880 1704 155555</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 contact-info-card">
+                                <div class="bg-white p-4 rounded shadow-sm d-flex align-items-center border-start border-primary border-4">
+                                    <div class="bg-light text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                        <i class="fa-solid fa-envelope fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Email Us</h6>
+                                        <p class="text-muted mb-0 small">info@realstate.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="flex-grow-1 bg-white rounded shadow-sm overflow-hidden contact-map-card">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14602.700312015093!2d90.40310329999999!3d23.785686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a0f70deb73%3A0x30c36498f90fe23!2sGulshan%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0; min-height: 250px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer id="footer" class="position-relative overflow-hidden pt-5 pb-3">
+
+        <!-- CSS Curve (Wave) at the top -->
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- GSAP Animated Blobs Background -->
+        <div class="footer-blobs-bg">
+            <div class="gsap-blob blob-1"></div>
+            <div class="gsap-blob blob-2"></div>
+            <div class="gsap-blob blob-3"></div>
+        </div>
+
+        <div class="container position-relative z-index-1">
+            <div class="row gx-5 mb-5 footer-content-row">
+                <!-- Left: Company Info & Contact -->
+                <div class="col-lg-5 mb-4 mb-lg-0 footer-col">
+                    <h2 class="fw-bold mb-1 letter-spacing-1 text-dark">PROPERTY</h2>
+                    <h6 class="text-uppercase text-muted letter-spacing-2 mb-4" style="font-size: 0.75rem;">Development
+                        Ltd</h6>
+
+                    <p class="text-muted small mb-4 pe-lg-4 lh-lg">
+                        Building exceptional spaces that redefine modern living.<br>
+                        Excellence in every detail, innovation in every project.
+                    </p>
+
+                    <h6 class="text-uppercase text-secondary fw-bold mb-3 small letter-spacing-1">Get In Touch</h6>
+
+                    <div class="d-flex flex-wrap gap-4 mb-3">
+                        <h4 class="fw-bold text-dark mb-0">01704 155 555</h4>
+                        <h4 class="fw-bold text-dark mb-0">01704 152 106</h4>
+                    </div>
+
+                    <ul class="list-unstyled text-muted small contact-list">
+                        <li class="mb-2"><i class="fa-solid fa-envelope text-primary me-2"></i> mktg308@prangroup.com
+                        </li>
+                        <li><i class="fa-solid fa-location-dot text-primary me-2 pt-1 float-start"></i> <span
+                                class="d-block ms-4">105 Pragati Sarani, Middle Badda, Dhaka - 1212, Bangladesh</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Middle: Quick Links & Follow Us -->
+                <div class="col-lg-7 d-flex justify-content-between flex-wrap footer-col">
+
+                    <div class="mb-4 mb-md-0">
+                        <h6 class="text-uppercase text-primary fw-bold mb-4 small letter-spacing-1">Quick Links</h6>
+                        <ul class="list-unstyled footer-links small">
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Management Team</a>
+                            </li>
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Get Quote</a></li>
+                            <li><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4 mb-md-0">
+                        <h6 class="text-uppercase text-primary fw-bold mb-4 small letter-spacing-1">Projects</h6>
+                        <ul class="list-unstyled footer-links small">
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Completed</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Upcoming</a></li>
+                            <li><a href="#" class="text-muted text-decoration-none">Ongoing</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h6 class="text-uppercase text-primary fw-bold mb-4 small letter-spacing-1">Follow Us</h6>
+                        <div class="d-flex gap-2 footer-socials">
+                            <a href="#" class="d-flex align-items-center justify-content-center text-dark"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center text-dark"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center text-dark"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-top pt-3 text-center footer-bottom-row">
+                <p class="small text-muted mb-0">
+                    &copy; 2028 Property Development Limited. All rights reserved. | <a href="#"
+                        class="text-primary text-decoration-none">Privacy Policy and Terms & Condition</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8801704155555" target="_blank"
+        class="whatsapp-float d-flex align-items-center justify-content-center">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-to-top d-flex align-items-center justify-content-center" id="scrollToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

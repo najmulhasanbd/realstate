@@ -17,22 +17,21 @@ $(document).ready(function () {
     initVideoModal();
     initFooterAnimations();
     initCounters();
+    initNewSections();
+    initContactPage();
 
     // ------------------------------------------
     // 0. Grid Animations
     // ------------------------------------------
     function initGridAnimation() {
         gsap.from(".page-grid-line", {
-            scrollTrigger: {
-                trigger: "#about",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            },
             scaleY: 0,
             transformOrigin: "top",
-            duration: 1.5,
-            stagger: 0.2,
-            ease: "power3.inOut"
+            duration: 2,
+            stagger: 0.3,
+            ease: "power2.inOut",
+            repeat: -1,
+            yoyo: true
         });
     }
 
@@ -67,18 +66,6 @@ $(document).ready(function () {
     function initMobileMenuAnimations() {
         const toggleBtn = document.querySelector('.navbar-toggler');
         if (!toggleBtn) return;
-
-        toggleBtn.addEventListener('click', () => {
-            if (!toggleBtn.classList.contains('collapsed')) {
-                gsap.from(".navbar-nav .nav-item", {
-                    x: 50,
-                    opacity: 0,
-                    duration: 0.4,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                });
-            }
-        });
 
         const mobileMenu = document.getElementById('mobileMenu');
         if (!mobileMenu) return;
@@ -154,13 +141,11 @@ $(document).ready(function () {
             },
             on: {
                 init: function () {
-                    // Animate first slide on load after a slight delay
                     setTimeout(() => {
                         animateSlide(this.slides[this.activeIndex]);
                     }, 500);
                 },
                 slideChangeTransitionStart: function () {
-                    // Animate active slide when transition starts
                     animateSlide(this.slides[this.activeIndex]);
                 }
             }
@@ -171,7 +156,7 @@ $(document).ready(function () {
     // 3.5 Projects Slider
     // ------------------------------------------
     function initProjectSlider() {
-        const projectSwiper = new Swiper('.project-swiper', {
+        const sliderConfig = {
             slidesPerView: 1,
             spaceBetween: 20,
             loop: true,
@@ -179,10 +164,6 @@ $(document).ready(function () {
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.project-next',
-                prevEl: '.project-prev',
             },
             breakpoints: {
                 768: {
@@ -194,30 +175,56 @@ $(document).ready(function () {
                     spaceBetween: 30
                 }
             }
+        };
+
+        new Swiper('.ongoing-swiper', {
+            ...sliderConfig,
+            navigation: { nextEl: '.ongoing-next', prevEl: '.ongoing-prev' }
         });
 
-        // Optional GSAP reveal for projects section
-        gsap.from("#projects .container", {
-            scrollTrigger: {
-                trigger: "#projects",
-                start: "top 80%",
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out"
+        new Swiper('.upcoming-swiper', {
+            ...sliderConfig,
+            navigation: { nextEl: '.upcoming-next', prevEl: '.upcoming-prev' }
         });
 
-        gsap.from(".project-slide > a", {
-            scrollTrigger: {
-                trigger: "#projects",
-                start: "top 70%",
-            },
-            y: 100,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power3.out"
+        new Swiper('.completed-swiper', {
+            ...sliderConfig,
+            navigation: { nextEl: '.completed-next', prevEl: '.completed-prev' }
+        });
+
+        // Beautiful GSAP reveal for each project section independently
+        const projectSections = ['#projects', '#upcoming-projects', '#completed-projects'];
+
+        projectSections.forEach(selector => {
+            const section = document.querySelector(selector);
+            if (!section) return;
+
+            // Animate the section header (titles and arrows)
+            gsap.from(section.querySelectorAll(".container > div"), {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                },
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+
+            // Animate the swiper slide contents within this specific section
+            gsap.from(section.querySelectorAll(".swiper-slide > a"), {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 75%",
+                },
+                y: 50,
+                opacity: 0,
+                scale: 0.95,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "back.out(1.2)"
+            });
         });
     }
 
@@ -498,6 +505,173 @@ $(document).ready(function () {
                 behavior: 'smooth'
             });
         });
+    }
+
+    // ------------------------------------------
+    // 9. New Sections Animations & Logic
+    // ------------------------------------------
+    function initNewSections() {
+
+        // Amenities Reveal
+        const amenitiesSection = document.getElementById('amenities');
+        if (amenitiesSection) {
+            gsap.from(amenitiesSection.querySelector('.amenity-header'), {
+                scrollTrigger: {
+                    trigger: amenitiesSection,
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+            gsap.from(amenitiesSection.querySelectorAll('.amenity-item'), {
+                scrollTrigger: {
+                    trigger: amenitiesSection,
+                    start: "top 75%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.out(1.2)"
+            });
+        }
+
+        // Testimonials Swiper
+        const testimonialSwiperEl = document.querySelector('.testimonial-swiper');
+        if (testimonialSwiperEl) {
+            new Swiper('.testimonial-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.testimonial-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+
+            gsap.from(document.querySelector('#testimonials .testimonial-header'), {
+                scrollTrigger: {
+                    trigger: "#testimonials",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+            gsap.from(document.querySelectorAll('.testimonial-slide'), {
+                scrollTrigger: {
+                    trigger: "#testimonials",
+                    start: "top 75%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+        }
+
+    }
+
+    // ------------------------------------------
+    // 10. Contact Page Animations
+    // ------------------------------------------
+    function initContactPage() {
+        const contactHero = document.querySelector('.contact-hero');
+        if (contactHero) {
+            // Hero Animations
+            gsap.from(".contact-title", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.2,
+                ease: "power3.out"
+            });
+            gsap.from(".contact-subtitle", {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                delay: 0.4,
+                ease: "power3.out"
+            });
+
+            // Form Animations
+            gsap.from(".contact-form-col", {
+                scrollTrigger: {
+                    trigger: ".contact-form-col",
+                    start: "top 80%",
+                },
+                x: -50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            // Info Cards & Map Animations
+            gsap.from(".contact-info-card", {
+                scrollTrigger: {
+                    trigger: ".contact-info-col",
+                    start: "top 80%",
+                },
+                x: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "back.out(1.2)"
+            });
+
+            gsap.from(".contact-map-card", {
+                scrollTrigger: {
+                    trigger: ".contact-map-card",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.5,
+                ease: "power3.out"
+            });
+
+            // Form Submit Intercept (UI only)
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+                    btn.disabled = true;
+                    
+                    // Simulate network request
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent Successfully!';
+                        btn.classList.replace('btn-primary', 'btn-success');
+                        contactForm.reset();
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.classList.replace('btn-success', 'btn-primary');
+                            btn.disabled = false;
+                        }, 3000);
+                    }, 1500);
+                });
+            }
+        }
     }
 
 });

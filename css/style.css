@@ -851,3 +851,181 @@ body {
     color: #fff;
     transform: translateY(-5px);
 }
+
+/* ==========================================
+   New Homepage Sections (Search, Amenities, Testimonials, EMI)
+   ========================================== */
+
+/* Advanced Search Bar */
+.search-bar-wrapper select {
+    cursor: pointer;
+}
+.search-bar-wrapper select:focus {
+    box-shadow: none;
+    border: 1px solid var(--primary-color) !important;
+}
+
+/* Amenities Section */
+.amenity-box {
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.amenity-box i {
+    transition: transform 0.3s ease;
+}
+.amenity-box:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-primary) !important;
+}
+.amenity-box:hover i, .amenity-box:hover h6 {
+    color: #fff !important;
+}
+.amenity-box:hover i {
+    transform: scale(1.2);
+}
+
+/* Testimonials */
+.testimonial-swiper {
+    padding-bottom: 50px !important;
+}
+.testimonial-slide {
+    height: auto !important;
+}
+.testimonial-pagination .swiper-pagination-bullet {
+    background: var(--primary-color) !important;
+    opacity: 0.3;
+}
+.testimonial-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 20px;
+    border-radius: 5px;
+}
+
+/* ==========================================
+   Premium Dropdown Menu
+   ========================================== */
+
+.dropdown-menu {
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08) !important;
+    padding: 12px 0;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.dropdown-item {
+    padding: 10px 25px;
+    font-weight: 500;
+    color: #444;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 166, 81, 0.05);
+    color: var(--primary-color);
+    padding-left: 30px;
+}
+
+.dropdown-item:hover::before {
+    opacity: 1;
+    left: 15px;
+}
+
+/* Desktop Hover Dropdown */
+@media (min-width: 992px) {
+    .navbar .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-top: 0;
+    }
+    .navbar .nav-item.dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Dropdown styling */
+.mobile-offcanvas .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding-left: 10px;
+}
+.mobile-offcanvas .dropdown-item {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+}
+.mobile-offcanvas .dropdown-item:hover {
+    color: #fff !important;
+    background: transparent;
+    padding-left: 20px;
+}
+.mobile-offcanvas .dropdown-item::before {
+    background-color: #fff;
+}
+
+/* ==========================================
+   Contact Page Styles
+   ========================================== */
+
+.contact-hero {
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.contact-input {
+    border-radius: 8px;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+    background-color: #fff !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 166, 81, 0.25) !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.contact-info-card > div {
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover > div {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.contact-info-card:hover i {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.contact-map-card iframe {
+    transition: all 0.3s ease;
+}
+
+.contact-map-card:hover iframe {
+    filter: brightness(0.9);
+}

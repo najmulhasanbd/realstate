@@ -15,6 +15,17 @@
 
 <body>
 
+    <!-- Global Full-page Grid -->
+    <div class="container position-fixed start-50 translate-middle-x"
+        style="z-index: 9999; pointer-events: none; top:0; height: 100vh; opacity: 0.4;">
+        <div class="row h-100">
+            <div class="col-3 page-grid-line"></div>
+            <div class="col-3 page-grid-line"></div>
+            <div class="col-3 page-grid-line"></div>
+            <div class="col-3 page-grid-line border-end"></div>
+        </div>
+    </div>
+
     <header class="main-header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -38,14 +49,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Projects
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm mt-2" aria-labelledby="projectsDropdown">
+                                <li><a class="dropdown-item" href="#projects">Ongoing</a></li>
+                                <li><a class="dropdown-item" href="#upcoming-projects">Upcoming</a></li>
+                                <li><a class="dropdown-item" href="#completed-projects">Completed</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
+                            <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
                         <li class="nav-item ms-2">
-                            <a href="#" class="btn btn-square-solid px-4 py-2">Get Quote</a>
+                            <a href="#schedule" class="btn btn-square-solid px-4 py-2">Get Quote</a>
                         </li>
                     </ul>
                 </div>
@@ -53,35 +71,42 @@
         </nav>
 
         <!-- Offcanvas Mobile Menu -->
-        <div class="offcanvas offcanvas-end mobile-offcanvas" tabindex="-1" id="mobileMenu"
+        <div class="offcanvas offcanvas-end mobile-offcanvas bg-dark" tabindex="-1" id="mobileMenu"
             aria-labelledby="mobileMenuLabel">
             <div class="offcanvas-header pb-0 border-0">
-                <h3 class="offcanvas-title fw-bold" id="mobileMenuLabel">Real<span class="text-primary">State</span>
+                <h3 class="offcanvas-title fw-bold text-white" id="mobileMenuLabel">Real<span class="text-primary">State</span>
                 </h3>
-                <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column justify-content-between pt-5">
                 <ul class="navbar-nav mobile-nav-links gap-4 fs-4">
                     <li class="nav-item mobile-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active text-white" href="index.html">Home</a>
                     </li>
                     <li class="nav-item mobile-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link text-white" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item mobile-item dropdown">
+                        <a class="nav-link text-white dropdown-toggle" href="#" id="mobileProjectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark border-0 shadow-none bg-transparent ps-3" aria-labelledby="mobileProjectsDropdown">
+                            <li><a class="dropdown-item text-white-50" href="#projects">Ongoing</a></li>
+                            <li><a class="dropdown-item text-white-50" href="#upcoming-projects">Upcoming</a></li>
+                            <li><a class="dropdown-item text-white-50" href="#completed-projects">Completed</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item mobile-item">
-                        <a class="nav-link" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item mobile-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link text-white" href="contact.html">Contact Us</a>
                     </li>
                 </ul>
-                <div class="mobile-menu-footer mt-auto pt-4 border-top">
-                    <a class="btn btn-square-solid w-100 py-3 fw-bold fs-5 shadow-sm" href="#">Get Quote</a>
+                <div class="mobile-menu-footer mt-auto pt-4 border-top border-secondary">
+                    <a class="btn btn-square-solid w-100 py-3 fw-bold fs-5 shadow-sm" href="#schedule">Get Quote</a>
                     <div class="social-icons d-flex justify-content-center gap-3 mt-4">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white bg-secondary border-0"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-white bg-secondary border-0"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white bg-secondary border-0"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -188,6 +213,7 @@
         </div>
     </section>
 
+
     <!-- About Section -->
     <section id="about" class="section-padding overflow-hidden position-relative"
         style="background-color: var(--bg-light);">
@@ -195,17 +221,6 @@
         <!-- Background Image -->
         <div
             style="position: absolute; top:0; left:0; width:100%; height:100%; background: url('img/landowner.svg') center right/contain no-repeat; opacity: 0.15; z-index: 0;">
-        </div>
-
-        <!-- Long Borders Grid -->
-        <div class="container h-100 position-absolute start-50 translate-middle-x"
-            style="z-index: 1; pointer-events: none; top:0;">
-            <div class="row h-100">
-                <div class="col-3 page-grid-line"></div>
-                <div class="col-3 page-grid-line"></div>
-                <div class="col-3 page-grid-line"></div>
-                <div class="col-3 page-grid-line border-end"></div>
-            </div>
         </div>
 
         <!-- Section Content -->
@@ -276,23 +291,65 @@
         </div>
     </div>
 
-            <!-- Projects Section -->
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-5 bg-white position-relative overflow-hidden">
+        <div class="container py-4">
+            <div class="text-center mb-5 amenity-header">
+                <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">Premium Living</h6>
+                <h2 class="fw-bold text-dark display-5 mb-0">World-Class Amenities</h2>
+            </div>
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2 amenity-item">
+                    <div class="amenity-box p-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center transition-base shadow-sm">
+                        <i class="fa-solid fa-shield-halved fs-1 text-primary mb-3 transition-base"></i>
+                        <h6 class="fw-bold mb-0">24/7 Security</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 amenity-item">
+                    <div class="amenity-box p-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center transition-base shadow-sm">
+                        <i class="fa-solid fa-water-ladder fs-1 text-primary mb-3 transition-base"></i>
+                        <h6 class="fw-bold mb-0">Swimming Pool</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 amenity-item">
+                    <div class="amenity-box p-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center transition-base shadow-sm">
+                        <i class="fa-solid fa-dumbbell fs-1 text-primary mb-3 transition-base"></i>
+                        <h6 class="fw-bold mb-0">Gymnasium</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 amenity-item">
+                    <div class="amenity-box p-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center transition-base shadow-sm">
+                        <i class="fa-solid fa-tree fs-1 text-primary mb-3 transition-base"></i>
+                        <h6 class="fw-bold mb-0">Green Space</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 amenity-item">
+                    <div class="amenity-box p-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center transition-base shadow-sm">
+                        <i class="fa-solid fa-house-signal fs-1 text-primary mb-3 transition-base"></i>
+                        <h6 class="fw-bold mb-0">Smart Home</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ongoing Projects Section -->
     <section id="projects" class="py-5 overflow-hidden position-relative">
         <div class="container mb-4 d-flex justify-content-between align-items-end">
             <div>
                 <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">Our Projects</h6>
-                <h2 class="fw-bold text-dark display-5 mb-0">Exclusive Developments</h2>
+                <h2 class="fw-bold text-dark display-5 mb-0">Ongoing Projects</h2>
             </div>
 
             <!-- Custom Navigation Arrows -->
-            <div class="d-none d-md-flex gap-2">
+            <div class="d-flex gap-2">
                 <a href="javascript:void(0)"
-                    class="project-prev btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    class="ongoing-prev btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
                     style="width: 50px; height: 50px;">
                     <i class="fas fa-chevron-left"></i>
                 </a>
                 <a href="javascript:void(0)"
-                    class="project-next btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    class="ongoing-next btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
                     style="width: 50px; height: 50px;">
                     <i class="fas fa-chevron-right"></i>
                 </a>
@@ -300,55 +357,296 @@
         </div>
 
         <!-- Swiper Slider -->
-        <div class="swiper project-swiper w-100">
+        <div class="swiper ongoing-swiper w-100">
             <div class="swiper-wrapper">
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
+                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Orchid" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON ORCHID</h3>
+                            <p class="text-white-50 small mb-4">Gulshan Avenue</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Lily" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON LILY</h3>
+                            <p class="text-white-50 small mb-4">Banani DOHS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Rose" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON ROSE</h3>
+                            <p class="text-white-50 small mb-4">Baridhara</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="swiper-slide project-slide">
-                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
-                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
-                        <div class="project-overlay"></div>
-                        <div class="project-content">
-                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
-                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide project-slide">
-                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
-                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
-                        <div class="project-overlay"></div>
-                        <div class="project-content">
-                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
-                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
-                        </div>
-                    </a>
-                </div>
+    <!-- Upcoming Projects Section -->
+    <section id="upcoming-projects" class="py-5 overflow-hidden position-relative bg-light">
+        <div class="container mb-4 d-flex justify-content-between align-items-end">
+            <div>
+                <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">Our Projects</h6>
+                <h2 class="fw-bold text-dark display-5 mb-0">Upcoming Projects</h2>
+            </div>
 
-                <div class="swiper-slide project-slide">
-                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
-                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
-                        <div class="project-overlay"></div>
-                        <div class="project-content">
-                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
-                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide project-slide">
-                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
-                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Edison Iris" class="w-100 h-100 object-fit-cover">
-                        <div class="project-overlay"></div>
-                        <div class="project-content">
-                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON IRIS</h3>
-                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
-                        </div>
-                    </a>
-                </div>
+            <!-- Custom Navigation Arrows -->
+            <div class="d-flex gap-2">
+                <a href="javascript:void(0)"
+                    class="upcoming-prev btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    style="width: 50px; height: 50px;">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="javascript:void(0)"
+                    class="upcoming-next btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    style="width: 50px; height: 50px;">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
 
+        <!-- Swiper Slider -->
+        <div class="swiper upcoming-swiper w-100">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/2061057/pexels-photo-2061057.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Sky" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON SKY</h3>
+                            <p class="text-white-50 small mb-4">Purbachal</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Star" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON STAR</h3>
+                            <p class="text-white-50 small mb-4">Uttara Sector 15</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Moon" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON MOON</h3>
+                            <p class="text-white-50 small mb-4">Dhanmondi</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Sun" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON SUN</h3>
+                            <p class="text-white-50 small mb-4">Mirpur DOHS</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Completed Projects Section -->
+    <section id="completed-projects" class="py-5 overflow-hidden position-relative">
+        <div class="container mb-4 d-flex justify-content-between align-items-end">
+            <div>
+                <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">Our Projects</h6>
+                <h2 class="fw-bold text-dark display-5 mb-0">Completed Projects</h2>
+            </div>
+
+            <!-- Custom Navigation Arrows -->
+            <div class="d-flex gap-2">
+                <a href="javascript:void(0)"
+                    class="completed-prev btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    style="width: 50px; height: 50px;">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="javascript:void(0)"
+                    class="completed-next btn btn-outline-dark rounded-circle d-flex justify-content-center align-items-center"
+                    style="width: 50px; height: 50px;">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Swiper Slider -->
+        <div class="swiper completed-swiper w-100">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/221540/pexels-photo-221540.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Pearl" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON PEARL</h3>
+                            <p class="text-white-50 small mb-4">Mohakhali DOHS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/3288102/pexels-photo-3288102.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Ruby" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON RUBY</h3>
+                            <p class="text-white-50 small mb-4">Banani</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Diamond" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON DIAMOND</h3>
+                            <p class="text-white-50 small mb-4">Gulshan 2</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide project-slide">
+                    <a href="#" class="d-block w-100 h-100 text-decoration-none">
+                        <img src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Edison Emerald" class="w-100 h-100 object-fit-cover">
+                        <div class="project-overlay"></div>
+                        <div class="project-content">
+                            <h3 class="text-white fw-bold mb-1 text-uppercase">EDISON EMERALD</h3>
+                            <p class="text-white-50 small mb-4">Bashundhara R/A</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section id="testimonials" class="py-5 bg-light position-relative overflow-hidden">
+        <div class="container py-4">
+            <div class="text-center mb-5 testimonial-header">
+                <h6 class="text-uppercase text-secondary fw-bold mb-2 letter-spacing-1">Client Stories</h6>
+                <h2 class="fw-bold text-dark display-5 mb-0">What Our Clients Say</h2>
+            </div>
+            
+            <div class="swiper testimonial-swiper w-100 px-md-4">
+                <div class="swiper-wrapper pb-5">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide testimonial-slide">
+                        <div class="bg-white p-4 shadow-sm border h-100 d-flex flex-column" style="border-radius: 10px;">
+                            <ul class="list-unstyled d-flex text-warning mb-3">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p class="text-muted fst-italic flex-grow-1">"The attention to detail in their projects is unmatched. Moving into our new home at Edison Iris was a seamless experience."</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 50px; height: 50px;">A</div>
+                                <div class="ms-3">
+                                    <h6 class="fw-bold mb-0">Anisur Rahman</h6>
+                                    <small class="text-muted">Homeowner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide testimonial-slide">
+                        <div class="bg-white p-4 shadow-sm border h-100 d-flex flex-column" style="border-radius: 10px;">
+                            <ul class="list-unstyled d-flex text-warning mb-3">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                            </ul>
+                            <p class="text-muted fst-italic flex-grow-1">"Excellent customer service and timely handover. We are extremely happy with our commercial space in Banani."</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="bg-dark text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 50px; height: 50px;">F</div>
+                                <div class="ms-3">
+                                    <h6 class="fw-bold mb-0">Farhana Hossain</h6>
+                                    <small class="text-muted">Business Owner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide testimonial-slide">
+                        <div class="bg-white p-4 shadow-sm border h-100 d-flex flex-column" style="border-radius: 10px;">
+                            <ul class="list-unstyled d-flex text-warning mb-3">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p class="text-muted fst-italic flex-grow-1">"From the design to the finishing, everything feels incredibly premium. It truly is luxury living redefined."</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 50px; height: 50px;">M</div>
+                                <div class="ms-3">
+                                    <h6 class="fw-bold mb-0">Mahmudul Hasan</h6>
+                                    <small class="text-muted">Investor</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide testimonial-slide">
+                        <div class="bg-white p-4 shadow-sm border h-100 d-flex flex-column" style="border-radius: 10px;">
+                            <ul class="list-unstyled d-flex text-warning mb-3">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <p class="text-muted fst-italic flex-grow-1">"The smart home features are exactly what we were looking for. Very modern and perfectly built."</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5" style="width: 50px; height: 50px;">T</div>
+                                <div class="ms-3">
+                                    <h6 class="fw-bold mb-0">Tariqul Islam</h6>
+                                    <small class="text-muted">Homeowner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination testimonial-pagination" style="bottom: 0;"></div>
             </div>
         </div>
     </section>
@@ -364,6 +662,7 @@
         <!-- Subtle dark overlay -->
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25" style="z-index: 1;"></div>
     </section>
+
     <!-- Schedule Section -->
     <section id="schedule" class="section-padding position-relative overflow-hidden" style="background-color: #f8f9fa;">
         <!-- Subtle background pattern -->
